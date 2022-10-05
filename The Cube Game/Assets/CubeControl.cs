@@ -48,12 +48,6 @@ public class CubeControl : MonoBehaviour
                 transform.Rotate(Vector3.up, 180);
             }
         }
-            
-
-        if(Input.GetKey(KeyCode.T))
-        {
-            
-        }
 
     }
 }
