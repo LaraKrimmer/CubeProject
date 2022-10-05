@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class CubeControl : MonoBehaviour
 {
-
+    Rigidbody ourRigidBody;
+    
     float speed = 4;
     float turnSpeed = 45;
+
+    bool allowJump = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ourRigidBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,20 @@ public class CubeControl : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Space)&&allowJump)    
+        {
+            //ourRigidBody.AddExplosionForce(500, transform.position + Vector3.down, 2);
+            ourRigidBody.AddForce(400*Vector3.up);
+            allowJump = false;
+        }
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            allowJump = true;
+        }
     }
 }
 
