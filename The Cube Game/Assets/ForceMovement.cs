@@ -36,7 +36,20 @@ public class ForceMovement : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        print("Ouch");
-        collision.transform.position += Vector3.down;
+        Health objectHitHealth = collision.gameObject.GetComponent<Health>();
+        if (objectHitHealth)
+        {
+            objectHitHealth.ChangeHP(-20);
+
+            int ObjectsMaxHP = objectHitHealth.whatsYourMaxHealth();
+            if(ObjectsMaxHP > 100)
+            {
+                objectHitHealth.ChangeHP(-100);
+            }
+        }
+        else
+        {
+            print("Couldn't find Health script in object hit");
+        }
     }
 }

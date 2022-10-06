@@ -7,9 +7,11 @@ public class CubeControl : MonoBehaviour
     Rigidbody ourRigidBody;
     
     float speed = 4;
-    float turnSpeed = 45;
+    float turnSpeed = 90;
 
     bool allowJump = true;
+
+    public GameObject bullet;
 
     // Start is called before the first frame update
     void Start()
@@ -65,6 +67,10 @@ public class CubeControl : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             allowJump = true;
+        }
+        else if (collision.gameObject.CompareTag("Ball"))
+        {
+            collision.gameObject.GetComponent<Rigidbody>().AddForce(500*transform.position);
         }
     }
 }
