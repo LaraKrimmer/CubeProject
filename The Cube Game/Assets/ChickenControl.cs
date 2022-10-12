@@ -7,6 +7,8 @@ public class ChickenControl : MonoBehaviour
     Rigidbody ourRigidBody;
     Animator chickenAnimator;
 
+    public Transform eggTemplate;
+
     float speed = 2;
     float turnSpeed = 90;
 
@@ -70,6 +72,10 @@ public class ChickenControl : MonoBehaviour
             allowJump = false;
         }
 
+        if(Input.GetKeyDown(KeyCode.C))
+        {
+            Instantiate(eggTemplate, transform.position - (transform.forward)/2, Quaternion.identity);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
