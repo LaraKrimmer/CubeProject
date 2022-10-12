@@ -7,7 +7,8 @@ public class ChickenControl : MonoBehaviour
     Rigidbody ourRigidBody;
     Animator chickenAnimator;
 
-    public Transform eggTemplate;
+    public Transform[] eggTemplates = new Transform[4];
+    public int currentEggType;
 
     float speed = 2;
     float turnSpeed = 90;
@@ -74,7 +75,7 @@ public class ChickenControl : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.C))
         {
-            Instantiate(eggTemplate, transform.position - (transform.forward)/2, Quaternion.identity);
+            LayEgg();
         }
     }
 
@@ -84,5 +85,32 @@ public class ChickenControl : MonoBehaviour
         {
             allowJump = true;
         }
+        
+        
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Booster"))
+        {
+            currentEggType = other.GetComponent<BoosterControl>().boosterType;
+        }
+    }
+
+    private void LayEgg()
+    {
+        Instantiate(eggTemplates[currentEggType], transform.position - (transform.forward) / 2, Quaternion.identity);
+        if (currentEggType == 1)
+        {
+            //explosive egg
+        }
+        else if (currentEggType == 2)
+        {
+            //hatch into new chicken
+        }
+        else if (currentEggType == 3)
+        {
+            //speed boost egg
+        }
+    }    
 }
