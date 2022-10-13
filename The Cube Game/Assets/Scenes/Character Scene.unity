@@ -545,6 +545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tomothy the Chicken
       objectReference: {fileID: 0}
+    - target: {fileID: 8319179180581115755, guid: 84bb37072b107354796951f570e9f39b, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8320483518192849509, guid: 84bb37072b107354796951f570e9f39b, type: 3}
       propertyPath: m_RootOrder
       value: 0

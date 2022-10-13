@@ -57,7 +57,24 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3b5f53e0d97701e4d9691a51eec7d4a3, type: 2}
     - target: {fileID: 3936832175673128376, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
       propertyPath: m_Name
-      value: Egg
+      value: Explosive Egg
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
+--- !u!1 &1984764351757996918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3936832175673128376, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
+  m_PrefabInstance: {fileID: 3254198902000707278}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3099391575535726803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984764351757996918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c7fa442ac17124b96a79e25213da27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

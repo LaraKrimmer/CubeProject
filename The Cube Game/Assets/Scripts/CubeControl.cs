@@ -57,7 +57,7 @@ public class CubeControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)&&allowJump)    
         {
             //ourRigidBody.AddExplosionForce(500, transform.position + Vector3.down, 2);
-            ourRigidBody.AddForce(400*Vector3.up);
+            ourRigidBody.AddForce(200*Vector3.up);
             allowJump = false;
         }
 

@@ -57,7 +57,29 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 624fed607f1a5994a89869652aee9b31, type: 2}
     - target: {fileID: 3936832175673128376, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
       propertyPath: m_Name
-      value: Egg (1)
+      value: Spawn Egg
       objectReference: {fileID: 0}
+    - target: {fileID: 5667743675506008792, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
+      propertyPath: chickenTemplate
+      value: 
+      objectReference: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
+--- !u!1 &5358686226674111148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3936832175673128376, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
+  m_PrefabInstance: {fileID: 9007076908854372116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-738818814035530617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5358686226674111148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721c4124904564441ba0e7ac5e2ddb52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chickenTemplate: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}

@@ -21,7 +21,6 @@ public class ChickenControl : MonoBehaviour
         chickenAnimator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.W))
@@ -69,13 +68,13 @@ public class ChickenControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && allowJump)
         {
             //ourRigidBody.AddExplosionForce(500, transform.position + Vector3.down, 2);
-            ourRigidBody.AddForce(400 * Vector3.up);
+            ourRigidBody.AddForce(200 * Vector3.up);
             allowJump = false;
         }
 
         if(Input.GetKeyDown(KeyCode.C))
         {
-            LayEgg();
+            Instantiate(eggTemplates[currentEggType], transform.position - (transform.forward) / 2, Quaternion.identity);
         }
     }
 
@@ -84,9 +83,12 @@ public class ChickenControl : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             allowJump = true;
+        } 
+        else if (collision.gameObject.CompareTag("SpeedEgg"))
+        {
+            Destroy(collision.gameObject);
+            StartCoroutine(SpeedBooster());
         }
-        
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -94,23 +96,16 @@ public class ChickenControl : MonoBehaviour
         if (other.gameObject.CompareTag("Booster"))
         {
             currentEggType = other.GetComponent<BoosterControl>().boosterType;
+            Destroy(other.gameObject);
         }
     }
 
-    private void LayEgg()
+    IEnumerator SpeedBooster()
     {
-        Instantiate(eggTemplates[currentEggType], transform.position - (transform.forward) / 2, Quaternion.identity);
-        if (currentEggType == 1)
-        {
-            //explosive egg
-        }
-        else if (currentEggType == 2)
-        {
-            //hatch into new chicken
-        }
-        else if (currentEggType == 3)
-        {
-            //speed boost egg
-        }
-    }    
+        float originalSpeed = speed;
+        speed *= 2;
+        yield return new WaitForSeconds(10);
+        speed = originalSpeed;
+    }
+
 }
