@@ -30,7 +30,7 @@ public class ForceMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ourRigidBody.AddExplosionForce(500, transform.position + Vector3.down, 2);
+            
         }
   
     }
