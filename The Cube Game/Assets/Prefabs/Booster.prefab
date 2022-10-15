@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6962529716235918943}
   - component: {fileID: 6970258128725804257}
   - component: {fileID: 6983643440565004063}
-  - component: {fileID: 6983643440565004062}
+  - component: {fileID: 5960941573232139381}
   m_Layer: 0
   m_Name: Booster
   m_TagString: Booster
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.3966622, y: 2.2793622, z: 2.1000001}
   m_Center: {x: -0.022504508, y: 0.12031922, z: -0.19482045}
---- !u!114 &6983643440565004062
+--- !u!114 &5960941573232139381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
