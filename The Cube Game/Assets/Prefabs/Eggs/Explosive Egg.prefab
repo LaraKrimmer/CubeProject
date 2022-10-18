@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosive Egg
       objectReference: {fileID: 0}
+    - target: {fileID: 3936832175673128377, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}
 --- !u!1 &1984764351757996918 stripped
@@ -78,3 +82,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c7fa442ac17124b96a79e25213da27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalEggTemplate: {fileID: 3936832175673128373, guid: 8ff99ae6c68476b4baafa969b3feb339, type: 3}

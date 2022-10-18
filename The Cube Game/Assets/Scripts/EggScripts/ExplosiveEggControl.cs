@@ -9,6 +9,10 @@ public class ExplosiveEggControl : MonoBehaviour
 
     Rigidbody eggRigidBody;
 
+    public Transform normalEggTemplate;
+    int minEggsOnExplode = 3;
+    int maxEggsOnExplode = 15;
+
     void Start()
     {
         eggRigidBody = GetComponent<Rigidbody>();
@@ -29,6 +33,14 @@ public class ExplosiveEggControl : MonoBehaviour
     {
         //transform.position = Vector3.MoveTowards(transform.position, destination, 1000 * Time.deltaTime);
         transform.position = Vector3.MoveTowards(transform.position,new Vector3(1,1,1), 1000 * Time.deltaTime);
-        eggRigidBody.AddExplosionForce(500, transform.position + Vector3.down, 2);
+        int eggNumber = Random.Range(minEggsOnExplode, maxEggsOnExplode);
+
+        for (int i = 0; i < eggNumber; i++)
+        {
+            Vector3 randomLocation = new Vector3(Random.Range(-.2f, .2f), Random.Range(.2f, 1), Random.Range(-.2f, .2f));
+            Instantiate(normalEggTemplate, transform.position + randomLocation, Quaternion.identity);
+        }
+
+        eggRigidBody.AddExplosionForce(5000, transform.position + Vector3.down, 2);
     }
 }
