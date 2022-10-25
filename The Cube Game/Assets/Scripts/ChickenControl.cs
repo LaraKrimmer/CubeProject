@@ -67,14 +67,14 @@ public class ChickenControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && allowJump)
         {
-            //ourRigidBody.AddExplosionForce(500, transform.position + Vector3.down, 2);
-            ourRigidBody.AddForce(200 * Vector3.up);
+            ourRigidBody.AddForce(4000 * Vector3.up);
             allowJump = false;
         }
 
         if(Input.GetKeyDown(KeyCode.C))
         {
             Instantiate(eggTemplates[currentEggType], transform.position - (transform.forward) / 2, Quaternion.identity);
+            StartCoroutine(EggTimer());
         }
     }
 
@@ -106,6 +106,12 @@ public class ChickenControl : MonoBehaviour
         speed *= 2;
         yield return new WaitForSeconds(10);
         speed = originalSpeed;
+    }
+
+    IEnumerator EggTimer()
+    {
+        yield return new WaitForSeconds(10);
+        currentEggType = 0;
     }
 
 }
